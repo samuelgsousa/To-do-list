@@ -1,0 +1,41 @@
+.wellcomeMessage{
+    display: none;
+}
+
+.insertData{
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.7px;
+    border-color: #EAECF0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    list-style: none; 
+  
+    top: 162px;
+    left: 24px;
+    padding: 32px 0px 32px 0px;
+    gap: 24px;
+
+    margin-bottom: 15px;
+}
+
+h1{    
+    color: black;
+}
+
+.insertData input{
+    height: 3vh;
+    border-radius: 8px;
+    border-width: 1px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+

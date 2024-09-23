@@ -1,0 +1,320 @@
+
+
+$mainColor: #EAECF0;
+$commonFontColor: #0000008A;
+$buttonColor: #0796D3;
+
+@function lighten($color, $amount) {
+    @return mix(white, $color, $amount);
+  }
+
+.allContent{
+text-align: center;
+}
+
+h1{
+    color: $commonFontColor;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.taskList{
+    width: 60%;
+    margin: auto;
+
+    border-radius: 15px;
+    border-style: solid !important;
+    border-width: 1.7px;
+    border-color: $mainColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    list-style: none; 
+    padding: 32px 0px 32px 0px;
+    gap: 24px;
+    border-radius: 16px;
+
+    margin-bottom: 15px;
+
+}
+
+.taskList li{
+    cursor: pointer;
+    border-style: dashed !important;
+    border-width: 1.7px;
+    border-color: #D7DDE9;
+    border-radius: 10px;
+    width: 85%;
+    height: 6vh;
+    margin: 0; 
+    display: flex;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+
+    padding: 0px 15px 0px 15px;
+    gap: 16px;
+    border-radius: 8px;
+
+    border-width: 1px;
+
+    font-family: Inter Tight;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+    align-items: center;
+
+
+}
+
+
+.taskList li:hover{
+    background-color: #F7F9FD;
+    border-color: transparent;
+}
+
+input[type="checkbox"]{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+button{
+    height: 2.8rem;
+    width: 10rem;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 300;
+    background: linear-gradient(to right, $buttonColor, lighten($buttonColor, 40%));
+    font-size: 16px;
+    
+  }
+
+  .cancelButton{
+    background: #E7EEFB;
+    color: black;
+  }
+
+  .deleteButton{
+    background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+
+  }
+
+
+.excludeButton{
+    justify-self: end;
+    background-color: transparent;
+    background: none;
+    border-style: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trashIcon{
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.blur {
+    filter: blur(4px); 
+  }
+
+.popup{
+    @extend .taskList;
+    position: absolute;
+    background-color: white;
+    min-height: 25vh;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    padding-top: 1%;
+    box-sizing: border-box;
+   
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1; 
+  }
+
+  .buttonsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: Fixed (272px)px;
+    height: Hug (118px)px;
+    top: 195px;
+    left: 24px;
+    gap: 16px;
+
+  }
+
+  
+
+@media(max-width: 700px){
+  .taskList li{
+    width: 65%;
+  }
+
+
+  .buttonsContainer{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .buttonsContainer button{
+    width: 100%;
+    height: 6vh;
+  }
+
+
+}
+
+.custom-checkbox{
+  display: flex;
+  align-items: center;
+  }
+
+  /* Esconde o checkbox nativo */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+  }
+
+
+.custom-checkbox .checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid $mainColor;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkedTasks{
+  color: $commonFontColor;
+}
+
+/* Estilo do checkbox quando marcado */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #A0DCF6; 
+  border-color: #0796D3;
+}
+
+
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #0796D3;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked + .checkmark:after {
+  display: block;
+}
+
+
+.addTaskBtn{
+   width: 60%;
+}
+
+
+@media(max-width: 540px){
+  .popup.active{
+    position: sticky;
+    width: 105%;
+    padding: 5%;
+    height: 100vh;
+    margin: 0px;
+    translate: none;
+    border-radius: 0%;
+    margin: 0px;
+    transform: translate(-3%, -50%);
+  }
+
+  .buttonsContainer button{
+    height: 8vh;
+  }
+
+  .taskList{
+    width: 80%;
+  }
+
+  .taskList li{
+    width: 80%;
+  }
+
+  .addTaskBtn{
+    width: 80%;
+ }
+
+}
+
+
+#nTaskInput{
+  cursor: pointer;
+  border-width: 1.7px;
+  border-color: #D7DDE9;
+  border-radius: 10px;
+  width: 85%;
+  height: 6vh;
+  margin: 0; 
+  display: flex;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+
+  padding: 0px 15px 0px 15px;
+  gap: 16px;
+  border-radius: 8px;
+
+  border-width: 1px;
+
+  font-family: Inter Tight;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: -0.02em;
+  text-align: left;
+
+  align-items: center;
+
+  box-sizing: border-box !important;
+  width: 100% !important;
+  border-style: solid !important;
+}
+
+.wellcomeMessage{
+  display: inherit;
+}
