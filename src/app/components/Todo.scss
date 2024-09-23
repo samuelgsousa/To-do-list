@@ -2,7 +2,7 @@
 
 $mainColor: #EAECF0;
 $commonFontColor: #0000008A;
-$buttonColor: #0796D3;
+$buttonColor: #3752ec;
 
 @function lighten($color, $amount) {
     @return mix(white, $color, $amount);
@@ -221,8 +221,8 @@ button{
 
 /* Estilo do checkbox quando marcado */
 .custom-checkbox input:checked + .checkmark {
-  background-color: #A0DCF6; 
-  border-color: #0796D3;
+  background-color: #c1cafd; 
+  border-color: #3752ec;
 }
 
 
@@ -234,7 +234,7 @@ button{
   top: 2px;
   width: 6px;
   height: 12px;
-  border: solid #0796D3;
+  border: solid #3752ec;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }

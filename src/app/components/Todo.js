@@ -9,7 +9,7 @@ const Todo = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [confirmDeletePopup, setConfirmDeletePopup] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
-  const baseurl = ''
+  const baseurl = 'https://to-do-list-grtt.onrender.com/tasks'
    //const baseurl = 'http://localhost:5000/tasks'
 
    const router = useRouter();

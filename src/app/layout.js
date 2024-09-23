@@ -35,18 +35,28 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header>
 
-        <div className="logoContainer">
-          <img src="/Logomark.png" alt="logo" className="logo"/>
-          <h1>FocalPoint</h1>
-        </div>
+          <h1>To do App</h1>
 
-        <h2 className="wellcomeMessage">Bem vindo de volta, Marcus</h2>
+        <h2 className="wellcomeMessage">Bem vindo!!!</h2>
 
         <div>
           <span>{date}</span>
         </div>
         </header>
-        {children}
+
+        <main>{children}</main>
+
+        <footer>
+    <span>
+        Projeto desenvolvido por <strong>Samuel Sousa</strong>
+    </span>
+    
+    <div>
+        <a href="https://github.com/samuelgsousa" target="_blank">GitHub <img src="./external-link.svg" alt="" class="external" />  <img src="./github-mark.svg" alt="GitHub" id="Github"/></a> 
+        <a href="https://www.linkedin.com/in/samuel-gomes-teixeira-de-sousa-5537b71b9" target="_blank">Linkedin <img src="./external-link.svg" alt="Linkedin" class="external"/> <img src="./linkedin.svg" alt="" /> </a> 
+    </div>
+    
+</footer>
       </body>
     </html>
   );
