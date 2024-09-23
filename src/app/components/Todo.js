@@ -12,18 +12,6 @@ const Todo = () => {
   const baseurl = 'https://to-do-list-grtt.onrender.com/tasks'
    //const baseurl = 'http://localhost:5000/tasks'
 
-   const router = useRouter();
-
-   useEffect(() => {
-    // Verificar se existe o token de autenticação
-    const isAuthenticated = localStorage.getItem('authToken');
-
-    if (!isAuthenticated) {
-      window.alert('Você precisa realizar o login para acessar sua lista de tarefas')
-      router.push('/');
-    }
-  }, [router]);
-
   // Função para buscar tarefas do backend
   const fetchTasks = async () => {
     const response = await fetch(baseurl);
